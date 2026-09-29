@@ -6,6 +6,7 @@ Atividade de revisão gamificada para Ciências do 6º ao 9º ano, com **jornada
 
 - A realização deixou de ser em duplas: cada estudante seleciona **turma + próprio nome**.
 - O fluxo virou uma missão individual, com um desafio por vez, progresso, timer, combo, XP e tela de resultado.
+- Cada turma possui metadados curriculares explícitos (`anoSerie`, `componente` e `bimestre`); uma validação impede iniciar uma trilha com habilidades de outra série ou bimestre.
 - As questões foram reformuladas e alinhadas ao **Guia Priorizado de Ciências — CIE_AF_2026 (5)** consultado no Drive.
 - O conteúdo cobre os eixos do 3º bimestre:
   - **6º ano:** célula, microscopia, organelas, microrganismos, saneamento e níveis de organização;
@@ -36,3 +37,15 @@ Abra `http://localhost:8080`.
 O endpoint de Apps Script foi preservado. O payload agora inclui `alunoNome` e não depende de `apoioNome`/`mentorNome`. O ranking local usa `localStorage` por turma com a chave `ranking_<turma>`.
 
 Fonte curricular consultada: PDF `CIE_AF_2026 (5).pdf`, pasta **Guias Priorizados** no Google Drive, seções de Escopo-Sequência do 3º Bimestre e matriz de aprendizagens essenciais.
+
+
+## Regra curricular aplicada
+
+Ao selecionar uma turma, o sistema deriva a série pelo identificador (`6oAno_A`, `7oAno_B`, etc.) e valida que todas as questões carregadas possuem:
+
+- componente: **Ciências**;
+- bimestre: **3º Bimestre**;
+- habilidades BNCC com o prefixo correspondente (`EF06CI`, `EF07CI`, `EF08CI` ou `EF09CI`);
+- ano/série igual ao da turma selecionada.
+
+Assim, um aluno do 7º ano não recebe questões do 6º, 8º ou 9º ano.
