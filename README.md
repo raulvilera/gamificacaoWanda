@@ -9,7 +9,8 @@ Atividade de revisão gamificada para Ciências do 6º ao 9º ano, com **jornada
 - Cada turma possui metadados curriculares explícitos (`anoSerie`, `componente` e `bimestre`); uma validação impede iniciar uma trilha com habilidades de outra série ou bimestre.
 - As questões foram reformuladas e alinhadas ao **Guia Priorizado de Ciências — CIE_AF_2026 (5)** consultado no Drive, com referência às aulas do Escopo-Sequência do 3º bimestre.
 - As imagens foram auditadas por tema: ilustrações que não representavam diretamente o conteúdo foram removidas para não induzir o aluno ao erro.
-- Cada questão agora possui uma ilustração vetorial abstrata, sem texto, rótulos ou representação da alternativa correta, posicionada imediatamente abaixo do enunciado.
+- Cada questão agora possui uma fotografia ou micrografia real relacionada ao enunciado, sem diagramas explicativos, rótulos ou representação da alternativa correta, posicionada imediatamente abaixo do enunciado.
+- As fontes dos ativos visuais ficam registradas nos metadados `imagemFonte` de cada questão.
 - O conteúdo cobre os eixos do 3º bimestre:
   - **6º ano:** célula, microscopia, organelas, microrganismos, saneamento e níveis de organização;
   - **7º ano:** ecossistemas, biomas brasileiros, conservação, agricultura sustentável e saúde única;
